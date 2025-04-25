@@ -2,7 +2,7 @@ from botasaurus.request import request, Request
 from botasaurus_requests.response import Response
 
 @request(output=None, create_error_logs=False)
-def botasaurus_get(req: Request, url: str) -> Response:
+def botasaurus_get(req: Request, url: str, headers: dict = None) -> Response:
     """ General purpose "get" function that uses Botasaurus.
     
     Parameters
@@ -11,6 +11,8 @@ def botasaurus_get(req: Request, url: str) -> Response:
         The request object provided by the botasaurus decorator
     url : str
         The URL to request
+    headers : dict, optional
+        Headers to include in the request
         
     Returns
     -------
@@ -19,5 +21,9 @@ def botasaurus_get(req: Request, url: str) -> Response:
     """
     if not isinstance(url, str):
         raise TypeError('`url` must be a string.')
-    resp = req.get(url)
+
+    if headers is not None and not isinstance(headers, dict):
+        raise TypeError('`headers` must be a dictionary or None.')
+
+    resp = req.get(url, headers=headers)
     return resp
