@@ -30,7 +30,7 @@ dependencies = [
     "datetime>=5.5",
     "lxml>=5.3.0",
     "numpy>=2.0.2",
-    "pandas>=2.2.3",
+    "pandas>=2.2.2",
     "requests>=2.32.3",
     "selenium>=4.28.1",
     "tqdm>=4.67.1",
@@ -60,7 +60,7 @@ dev = [
 ]
 typecheck = [
     "mypy>=1.14.1",
-    "pandas-stubs>=2.2.2.240807",
+    "pandas-stubs>=2.2.2.240909",
     "types-beautifulsoup4>=4.12.0.20241020",
     "types-openpyxl>=3.1.5.20241225",
     "types-python-dateutil>=2.9.0.20241206",
